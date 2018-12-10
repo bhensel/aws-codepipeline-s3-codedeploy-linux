@@ -123,44 +123,43 @@
 						}
 					}
 				}
-				if(begin){
-					interval = window.setInterval(clock, 60);
-					document.onkeydown = function(e) {
-						var code = e.keyCode - 37;
-						/*
-						 * 0: left
-						 * 1: up
-						 * 2: right
-						 * 3: down
-						 **/
-						if (0 <= code && code < 4 && code !== turn[0]) {
-							turn.unshift(code);
-						} else if (-5 == code) {
-							if (interval) {
-								window.clearInterval(interval);
-								interval = null;
-							} else {
-								interval = window.setInterval(clock, 60);
-							}
-						} else { // O.o
-							dir = sum + code;
-							if (dir == 44||dir==94||dir==126||dir==171) {
-								sum+= code
-							} else if (dir === 218) easy = 1;
+				while(!begin){}
+				interval = window.setInterval(clock, 60);
+				document.onkeydown = function(e) {
+					var code = e.keyCode - 37;
+					/*
+					 * 0: left
+					 * 1: up
+					 * 2: right
+					 * 3: down
+					 **/
+					if (0 <= code && code < 4 && code !== turn[0]) {
+						turn.unshift(code);
+					} else if (-5 == code) {
+						if (interval) {
+							window.clearInterval(interval);
+							interval = null;
+						} else {
+							interval = window.setInterval(clock, 60);
 						}
+					} else { // O.o
+						dir = sum + code;
+						if (dir == 44||dir==94||dir==126||dir==171) {
+							sum+= code
+						} else if (dir === 218) easy = 1;
 					}
 				}
 			}
 			
 			function begin(){
 				begin = 1;
-				init();
 			}
 		</script>
 	</head>
 
 	<body onload="init()">
 		<h1>HTML5 SNAKE</h1>
+		<p></p>
 		<button type="button" onclick="begin()">begin game</button>
 	</body>
 </html>
