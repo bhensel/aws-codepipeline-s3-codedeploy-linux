@@ -51,6 +51,7 @@
 			var sum = 0, easy = 0;
 			var i, dir;
 			var canvas = document.createElement('canvas');
+			var begin = 0;
 			
 			function init() {
 			
@@ -98,7 +99,9 @@
 						reset();
 					}
 				}
-				interval = window.setInterval(clock, 60);
+				if (begin){
+					interval = window.setInterval(clock, 60);
+				}
 				document.onkeydown = function(e) {
 					var code = e.keyCode - 37;
 					/*
@@ -155,6 +158,11 @@
 				}
 			}
 			
+			function start(){
+				begin = 1;
+				reset();
+			}
+			
 
 			
 		</script>
@@ -163,5 +171,6 @@
 	<body onload="init()">
 		<h1>HTML5 SNAKE</h1>
 		<p></p>
+		<button type="button" onclick="Start()">Start</button>
 	</body>
 </html>
