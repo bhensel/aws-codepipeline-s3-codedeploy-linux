@@ -34,9 +34,7 @@
 			 *
 			 * Copyright (c) 2011, Robert Eisele (robert@xarg.org)
 			 * Dual licensed under the MIT or GPL Version 2 licenses.
-			 **/
-			var begin = 0;
-			
+			 **/		
 			function init() {
 				var ctx;
 				var turn  = [];
@@ -51,7 +49,7 @@
 				var interval = 0;
 				var score = 0;
 				var inc_score = 50;
-				var sum = 0, easy = 1;
+				var sum = 0, easy = 0;
 				var i, dir;
 				var canvas = document.createElement('canvas');
 				for (i = 0; i < 45; i++) {
@@ -150,16 +148,11 @@
 				}
 			}
 			
-			
-			function begin(){
-				begin = 1;
-			}
 		</script>
 	</head>
 
 	<body onload="init()">
 		<h1>HTML5 SNAKE</h1>
 		<p></p>
-		<button type="button" onclick="begin()">begin game</button>
 	</body>
 </html>
