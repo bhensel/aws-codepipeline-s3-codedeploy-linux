@@ -123,7 +123,7 @@
 						}
 					}
 				}
-				while(!begin){}
+				holdToStart();
 				interval = window.setInterval(clock, 60);
 				document.onkeydown = function(e) {
 					var code = e.keyCode - 37;
@@ -148,6 +148,15 @@
 							sum+= code
 						} else if (dir === 218) easy = 1;
 					}
+				}
+			}
+			
+			function holdToStart(){
+				if(!begin){
+					setTimeout(hold, 0);
+				}
+				else{
+					callback();
 				}
 			}
 			
