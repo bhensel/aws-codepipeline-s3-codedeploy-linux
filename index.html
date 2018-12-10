@@ -100,9 +100,6 @@
 					}
 				}
 				interval = window.setInterval(clock, 60);
-				if(!begin){
-					window.clearInterval(interval);	
-				}
 				document.onkeydown = function(e) {
 					var code = e.keyCode - 37;
 					/*
@@ -126,6 +123,9 @@
 							sum+= code
 						} else if (dir === 218) easy = 1;
 					}
+				}
+				if(!begin){
+					window.clearInterval(interval);	
 				}
 			}
 			
@@ -161,7 +161,18 @@
 			
 			function start(){
 				begin = 1;
-				reset();
+				ctx.clearRect(0, 0, 450, 300);
+				queue = [];
+				elements = 1;
+				map = [];
+				X = 5 + (Math.random() * (45 - 10))|0;
+				Y = 5 + (Math.random() * (30 - 10))|0;
+				direction = Math.random() * 3 | 0;
+				score = 0;
+				inc_score = 50;
+				for (i = 0; i < 45; i++) {
+					map[i] = [];
+				}
 			}
 			
 
