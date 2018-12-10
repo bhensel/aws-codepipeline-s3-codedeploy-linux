@@ -125,6 +125,16 @@
 				}
 			}
 			
+			function placeFood() {
+				var x, y;
+				do {
+					x = Math.random() * 45|0;
+					y = Math.random() * 30|0;
+				} while (map[x][y]);
+				map[x][y] = 1;
+				ctx.strokeRect(x * 10 + 1, y * 10 + 1, 10 - 2, 10 - 2);
+			}
+			
 			function reset(){
 				if (confirm("You lost! Play again? Your Score is " + score)) {
 					ctx.clearRect(0, 0, 450, 300);
@@ -145,15 +155,7 @@
 				}
 			}
 			
-			function placeFood() {
-				var x, y;
-				do {
-					x = Math.random() * 45|0;
-					y = Math.random() * 30|0;
-				} while (map[x][y]);
-				map[x][y] = 1;
-				ctx.strokeRect(x * 10 + 1, y * 10 + 1, 10 - 2, 10 - 2);
-			}
+
 			
 		</script>
 	</head>
