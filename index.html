@@ -35,23 +35,25 @@
 			 * Copyright (c) 2011, Robert Eisele (robert@xarg.org)
 			 * Dual licensed under the MIT or GPL Version 2 licenses.
 			 **/		
+			var ctx;
+			var turn  = [];
+			var xV = [-1, 0, 1, 0];
+			var yV = [0, -1, 0, 1];
+			var queue = [];
+			var elements = 1;
+			var map = [];
+			var X = 5 + (Math.random() * (45 - 10))|0;
+			var Y = 5 + (Math.random() * (30 - 10))|0;
+			var direction = Math.random() * 3 | 0;
+			var interval = 0;
+			var score = 0;
+			var inc_score = 50;
+			var sum = 0, easy = 0;
+			var i, dir;
+			var canvas = document.createElement('canvas');
+			
 			function init() {
-				var ctx;
-				var turn  = [];
-				var xV = [-1, 0, 1, 0];
-				var yV = [0, -1, 0, 1];
-				var queue = [];
-				var elements = 1;
-				var map = [];
-				var X = 5 + (Math.random() * (45 - 10))|0;
-				var Y = 5 + (Math.random() * (30 - 10))|0;
-				var direction = Math.random() * 3 | 0;
-				var interval = 0;
-				var score = 0;
-				var inc_score = 50;
-				var sum = 0, easy = 0;
-				var i, dir;
-				var canvas = document.createElement('canvas');
+			
 				for (i = 0; i < 45; i++) {
 					map[i] = [];
 				}
