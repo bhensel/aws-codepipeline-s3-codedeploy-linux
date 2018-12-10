@@ -123,7 +123,6 @@
 						}
 					}
 				}
-				holdToStart();
 				interval = window.setInterval(clock, 60);
 				document.onkeydown = function(e) {
 					var code = e.keyCode - 37;
@@ -151,14 +150,6 @@
 				}
 			}
 			
-			function holdToStart(){
-				if(!begin){
-					setTimeout(hold, 10);
-				}
-				else{
-					callback();
-				}
-			}
 			
 			function begin(){
 				begin = 1;
