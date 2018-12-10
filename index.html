@@ -61,15 +61,6 @@
 				canvas.setAttribute('height', 30 * 10);
 				ctx = canvas.getContext('2d');
 				document.body.appendChild(canvas);
-				function placeFood() {
-					var x, y;
-					do {
-						x = Math.random() * 45|0;
-						y = Math.random() * 30|0;
-					} while (map[x][y]);
-					map[x][y] = 1;
-					ctx.strokeRect(x * 10 + 1, y * 10 + 1, 10 - 2, 10 - 2);
-				}
 				placeFood();
 				
 				function clock() {
@@ -152,6 +143,16 @@
 				} else {
 					window.clearInterval(interval);
 				}
+			}
+			
+			function placeFood() {
+				var x, y;
+				do {
+					x = Math.random() * 45|0;
+					y = Math.random() * 30|0;
+				} while (map[x][y]);
+				map[x][y] = 1;
+				ctx.strokeRect(x * 10 + 1, y * 10 + 1, 10 - 2, 10 - 2);
 			}
 			
 		</script>
