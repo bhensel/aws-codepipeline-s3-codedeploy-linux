@@ -51,6 +51,7 @@
 			var sum = 0, easy = 0;
 			var i, dir;
 			var canvas = document.createElement('canvas');
+			var running = 0;
 			
 			function init() {
 			
@@ -64,6 +65,7 @@
 			}
 			
 			function run() {
+				running = 1;
 				placeFood();
 				function clock() {
 					if (easy) {
@@ -158,7 +160,10 @@
 			}
 			
 			function start(){
-				run();
+				if (!running){
+					window.clearInterval(interval);
+					run();
+				}
 			}
 			
 
