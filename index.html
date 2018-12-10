@@ -51,7 +51,6 @@
 			var sum = 0, easy = 0;
 			var i, dir;
 			var canvas = document.createElement('canvas');
-			var begin = 0;
 			
 			function init() {
 			
@@ -62,10 +61,10 @@
 				canvas.setAttribute('height', 30 * 10);
 				ctx = canvas.getContext('2d');
 				document.body.appendChild(canvas);
-				placeFood();
 			}
 			
 			function run() {
+				placeFood();
 				function clock() {
 					if (easy) {
 						X = (X+45)%45;
