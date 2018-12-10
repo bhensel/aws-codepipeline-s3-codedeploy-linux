@@ -99,8 +99,9 @@
 						reset();
 					}
 				}
-				if (begin){
-					interval = window.setInterval(clock, 60);
+				interval = window.setInterval(clock, 60);
+				if(!begin){
+					window.clearInterval(interval);	
 				}
 				document.onkeydown = function(e) {
 					var code = e.keyCode - 37;
