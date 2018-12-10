@@ -63,7 +63,9 @@
 				ctx = canvas.getContext('2d');
 				document.body.appendChild(canvas);
 				placeFood();
-				
+			}
+			
+			function run() {
 				function clock() {
 					if (easy) {
 						X = (X+45)%45;
@@ -124,9 +126,6 @@
 						} else if (dir === 218) easy = 1;
 					}
 				}
-				if(!begin){
-					window.clearInterval(interval);	
-				}
 			}
 			
 			function placeFood() {
@@ -160,19 +159,7 @@
 			}
 			
 			function start(){
-				begin = 1;
-				ctx.clearRect(0, 0, 450, 300);
-				queue = [];
-				elements = 1;
-				map = [];
-				X = 5 + (Math.random() * (45 - 10))|0;
-				Y = 5 + (Math.random() * (30 - 10))|0;
-				direction = Math.random() * 3 | 0;
-				score = 0;
-				inc_score = 50;
-				for (i = 0; i < 45; i++) {
-					map[i] = [];
-				}
+				run();
 			}
 			
 
